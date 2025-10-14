@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿# 小艸西手作甜點訂購表單 dessert_order
 
 這是一個使用 Flask跟JS 製作的簡單線上甜點訂購頁面，供作品展示使用。
@@ -69,3 +68,4 @@ cd dessert-order
 ```bash
 git clone https://github.com/claireyang1026/dessert_order.git
 cd dessert-order
+
