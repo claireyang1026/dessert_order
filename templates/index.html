@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>甜點訂購表單</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>🍰 小艸西甜點訂購</h1>
+
+  <section class="products">
+    <div class="product">
+      <h3>達克瓦茲 - 巧克力</h3>
+      <p>$90</p>
+      <button onclick="addToCart('達克瓦茲 - 巧克力', 90)">加入購物車</button>
+    </div>
+    <div class="product">
+      <h3>達克瓦茲 - 提拉米蘇</h3>
+      <p>$90</p>
+      <button onclick="addToCart('達克瓦茲 - 提拉米蘇', 90)">加入購物車</button>
+    </div>
+    <div class="product">
+      <h3>達克瓦茲 - 太妃糖</h3>
+      <p>$90</p>
+      <button onclick="addToCart('達克瓦茲 - 太妃糖', 90)">加入購物車</button>
+    </div>
+    <div class="product">
+      <h3>雪Q餅</h3>
+      <p>$100</p>
+      <button onclick="addToCart('雪Q餅', 100)">加入購物車</button>
+    </div>
+    <div class="product">
+      <h3>提拉米蘇</h3>
+      <p>$120</p>
+      <button onclick="addToCart('提拉米蘇', 120)">加入購物車</button>
+    </div>
+  </section>
+
+  <h2>🛒 購物車</h2>
+  <ul id="cart-list"></ul>
+  <p>總金額：$<span id="total">0</span></p>
+  <button onclick="clearCart()">清空購物車</button>
+
+  <h2>📋 訂購資訊</h2>
+  <form id="order-form" onsubmit="submitOrder(event)">
+<!-- 姓名 -->
+<label>姓名：
+  <input type="text" id="name" required>
+</label><br>
+
+<!-- 電話 -->
+<label>電話：
+  <input type="text" id="phone" required>
+</label><br>
+
+<!-- 取貨方式 -->
+<div class="form-row">
+ <label>取貨方式：</label>
+ <div class="delivery-options">
+  <label><input type="radio" name="deliver" value="宅配" required onclick="toggleAddress()"> 宅配</label>
+  <label><input type="radio" name="deliver" value="面交" onclick="toggleAddress()"> 面交</label>
+  </div>
+</div>
+
+
+<!-- 地址（只在宅配時顯示） -->
+<div id="address-field" style="display:none;">
+  <label>地址：
+    <input type="text" id="address">
+  </label><br>
+</div>
+
+<!-- 備註 -->
+<label>備註：
+  <textarea id="note" rows="3"></textarea>
+</label><br>
+
+<!-- 提交按鈕 -->
+<button type="submit">送出訂單</button>
+
+  </form>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
