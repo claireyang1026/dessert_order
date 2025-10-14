@@ -10,9 +10,20 @@
 
   <section class="products">
     <div class="product">
-      <h3>達克瓦茲 - 巧克力</h3>
+      <h3>達克瓦茲 - 巧克力豆豆</h3>
       <p>$90</p>
-      <button onclick="addToCart('達克瓦茲 - 巧克力', 90)">加入購物車</button>
+      <button onclick="addToCart('達克瓦茲 - 巧克力豆豆', 90)">加入購物車</button>
+    </div>
+  
+    <div class="product">
+      <h3>達克瓦茲 - 太妃糖堅果</h3>
+      <p>$90</p>
+      <button onclick="addToCart('達克瓦茲 - 太妃糖堅果', 90)">加入購物車</button>
+    </div>
+    <div class="product">
+    <h3>達克瓦茲 - 鐵觀音橘皮</h3>
+      <p>$90</p>
+      <button onclick="addToCart('達克瓦茲 - 鐵觀音橘皮', 90)">加入購物車</button>
     </div>
     <div class="product">
       <h3>達克瓦茲 - 提拉米蘇</h3>
@@ -20,29 +31,25 @@
       <button onclick="addToCart('達克瓦茲 - 提拉米蘇', 90)">加入購物車</button>
     </div>
     <div class="product">
-      <h3>達克瓦茲 - 太妃糖</h3>
+    <h3>達克瓦茲 - 紅韻奶蓋</h3>
       <p>$90</p>
-      <button onclick="addToCart('達克瓦茲 - 太妃糖', 90)">加入購物車</button>
+      <button onclick="addToCart('達克瓦茲 - 紅韻奶蓋', 90)" >加入購物車</button>
     </div>
     <div class="product">
-      <h3>雪Q餅</h3>
+      <h3>雪Q餅</h3><br>
       <p>$100</p>
       <button onclick="addToCart('雪Q餅', 100)">加入購物車</button>
     </div>
     <div class="product">
-      <h3>提拉米蘇</h3>
+      <h3>提拉米蘇</h3><br>
       <p>$120</p>
       <button onclick="addToCart('提拉米蘇', 120)">加入購物車</button>
     </div>
   </section>
-
-  <h2>🛒 購物車</h2>
-  <ul id="cart-list"></ul>
-  <p>總金額：$<span id="total">0</span></p>
-  <button onclick="clearCart()">清空購物車</button>
-
-  <h2>📋 訂購資訊</h2>
-  <form id="order-form" onsubmit="submitOrder(event)">
+<div class="order-section">
+  <div class="form-box">
+    <h2>📋 訂購資訊</h2>
+    <form id="order-form" onsubmit="submitOrder(event)">
 <!-- 姓名 -->
 <label>姓名：
   <input type="text" id="name" required>
@@ -77,8 +84,17 @@
 
 <!-- 提交按鈕 -->
 <button type="submit">送出訂單</button>
+   </form>
+ </div>
 
-  </form>
+<!--購物車在右邊-->
+<div class="cart-box">
+    <h2>🛒 購物車</h2>
+    <ul id="cart-list"></ul>
+    <p>總金額：$<span id="total">0</span></p>
+    <button onclick="clearCart()">清空購物車</button>
+ 
+</div>
 
   <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
